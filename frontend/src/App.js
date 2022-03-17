@@ -3,9 +3,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <MainPage />
-    </div>
+    <>
+      <h1>RedSky Coding Challenge</h1>
+      <div className="App">
+        <MainPage />
+      </div>
+    </>
   );
 }
 
