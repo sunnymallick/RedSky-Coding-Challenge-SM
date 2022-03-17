@@ -22,7 +22,6 @@ export const getUsers = async (req: Request, res: Response) => {
 
 export const addUser = (req: Request, res: Response) => {
     const { first_name, last_name, email, avatar } = req.body;
-
     let newUser = {
         id: ++userId, 
         first_name,
