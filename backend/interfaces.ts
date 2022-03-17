@@ -9,6 +9,3 @@ export interface NewUser extends User {
     id: number;
 }
 
-export interface Result {
-    data: NewUser[]
-}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './EditUser.css'
 
 const EditUser = ({ editUser, setShowModal, users, userId }) => {
     const individualUser = users.find(user => user.id === userId)
@@ -21,8 +21,12 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
 
     return (
         <>
-            <div className='form-container'>
-            <form onSubmit={handleSubmit}>
+            <div className='edit-user-container'>
+                <div className='edit-user-header'>
+                    <h3>EDIT USER</h3>
+                </div>
+            <form onSubmit={handleSubmit} className='edit-user-form'>
+                <p>FIRST NAME</p>
                 <input
                     className='form-input'
                     type='text'
@@ -30,6 +34,7 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={firstName}
                     onChange={updateFirstName}
                     required />
+                <p>LAST NAME</p>
                 <input
                     className='form-input'
                     type='text'
@@ -37,6 +42,7 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={lastName}
                     onChange={updateLastName}
                     required />
+                <p>EMAIL ADDRESS</p>
                 <input 
                     className='form-input'
                     type='email'
@@ -44,6 +50,7 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={email}
                     onChange={updateEmail}
                     required />
+                <p>AVATAR IMAGE LINK</p>
                 <input
                     className='form-input'
                     type='text'

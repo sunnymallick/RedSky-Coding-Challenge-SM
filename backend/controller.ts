@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import axios from 'axios';
-import { NewUser } from './interfaces'
+import { NewUser } from './interfaces';
 
 let userId = 0;
 let usersList: NewUser[] = [];

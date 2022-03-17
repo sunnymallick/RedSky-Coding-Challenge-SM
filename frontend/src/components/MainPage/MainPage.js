@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import AddUserModal from '../AddUser'
 import EditUserModal from '../EditUser'
-import EditUser from '../EditUser/EditUser'
+import { toast, toastContainer } from 'react-toastify'
 
 const MainPage = () => {
     const [users, setUsers] = useState([])
@@ -28,7 +28,8 @@ const MainPage = () => {
     
     const deleteUser = async (id) => {
         const res = await axios.delete(`/deleteUser/${id}`);
-        setUsers(res.data);        
+        setUsers(res.data);
+        toast('User has been deleted!')        
     };
     
     return (
@@ -37,11 +38,11 @@ const MainPage = () => {
             <div className='user-list'>
                 {users.map((user) => {
                     return (
-                        <>
+                        <div className='user-list-container' key={user.id}>
                             <h2>{user.first_name} {user.last_name}</h2>
                             <EditUserModal editUser={editUser} userId={user.id} users={users} />
                             <button onClick={() => deleteUser(user.id)}>DELETE</button>
-                        </>
+                        </div>
                     )
                 })}
             </div>
