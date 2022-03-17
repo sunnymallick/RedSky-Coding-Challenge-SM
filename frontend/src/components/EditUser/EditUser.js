@@ -1,25 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const AddUser = ({ setShowModal, newUser }) => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [avatar, setAvatar] = useState('');
+
+const EditUser = ({ editUser, setShowModal, users, userId }) => {
+    const individualUser = users.find(user => user.id === userId)
+    const [firstName, setFirstName] = useState(individualUser.first_name);
+    const [lastName, setLastName] = useState(individualUser.last_name);
+    const [email, setEmail] = useState(individualUser.email);
+    const [avatar, setAvatar] = useState(individualUser.avatar);
     
     const updateFirstName = (e) => setFirstName(e.target.value)
     const updateLastName = (e) => setLastName(e.target.value)
     const updateEmail = (e) => setEmail(e.target.value)
     const updateAvatar = (e) => setAvatar(e.target.value)
 
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await newUser(firstName, lastName, email, avatar);
+        await editUser(+userId, firstName, lastName, email, avatar);
         setShowModal(false)
     }
 
     return (
-        <div className='form-container'>
+        <>
+            <div className='form-container'>
             <form onSubmit={handleSubmit}>
                 <input
                     className='form-input'
@@ -50,10 +52,11 @@ const AddUser = ({ setShowModal, newUser }) => {
                     onChange={updateAvatar}
                     required />
                 <button onClick={() => {setShowModal(false)}} type='button'>CANCEL</button>
-                <button type='submit'>CREATE</button>
+                <button type='submit'>SAVE</button>
             </form>
-        </div>
+            </div>
+        </>
     )
 }
 
-export default AddUser
+export default EditUser

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import AddUserModal from '../AddUser'
+import EditUserModal from '../EditUser'
+import EditUser from '../EditUser/EditUser'
 
 const MainPage = () => {
     const [users, setUsers] = useState([])
@@ -15,10 +17,14 @@ const MainPage = () => {
     }, [])
 
     const newUser = async (first_name, last_name, email, avatar) => {
-        const res = await axios.post('/addUser', { first_name, last_name, email, avatar })
-            setUsers(res.data)
+        const res = await axios.post('/addUser', { first_name, last_name, email, avatar });
+        setUsers(res.data)
     };
 
+    const editUser = async (id, first_name, last_name, email, avatar) => {
+        const res = await axios.put(`/editUserInfo/${id}`, { id, first_name, last_name, email, avatar });
+        setUsers(res.data)
+    }
     
     const deleteUser = async (id) => {
         const res = await axios.delete(`/deleteUser/${id}`);
@@ -33,6 +39,7 @@ const MainPage = () => {
                     return (
                         <>
                             <h2>{user.first_name} {user.last_name}</h2>
+                            <EditUserModal editUser={editUser} userId={user.id} users={users} />
                             <button onClick={() => deleteUser(user.id)}>DELETE</button>
                         </>
                     )

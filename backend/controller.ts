@@ -12,7 +12,7 @@ const getUsersFromApi = async () => {
     for (let i = 0; i < usersList.length; i++) {
         if (userId < usersList[i].id) userId = usersList[i].id
     }
-}
+};
 
 //Gets all users from local cache
 export const getUsers = async (req: Request, res: Response) => {
@@ -20,6 +20,7 @@ export const getUsers = async (req: Request, res: Response) => {
     return res.send({ data: usersList});
 };
 
+//Adds user to list
 export const addUser = (req: Request, res: Response) => {
     const { first_name, last_name, email, avatar } = req.body;
     let newUser = {
@@ -33,11 +34,11 @@ export const addUser = (req: Request, res: Response) => {
     return res.send(usersList);
 };
 
-//Update user information
-export const updateUserInfo = (req: Request, res: Response) => {
+//Edit user information
+export const editUserInfo = (req: Request, res: Response) => {
+    const { id } = req.params
     const { first_name, last_name, email, avatar } = req.body;
-    const listIndex = usersList.findIndex(user => { return user.id === +req.params.id });
-
+    const listIndex = usersList.findIndex(user => { return user.id === +id });
     usersList[listIndex] = {
         id: usersList[listIndex].id,
         first_name,
@@ -51,7 +52,8 @@ export const updateUserInfo = (req: Request, res: Response) => {
 
 //Delete user
 export const deleteUser = (req: Request, res: Response) => {
-    const listIndex = usersList.findIndex(user => { return user.id === +req.params.id });
+    const { id } = req.params 
+    const listIndex = usersList.findIndex(user => { return user.id === +id });
     usersList.splice(listIndex, 1);
     return res.send(usersList);
 };

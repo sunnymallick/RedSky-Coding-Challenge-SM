@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.get('/users', controller.getUsers)
 app.post('/addUser', controller.addUser)
-app.put('/updateUserInfo/:id', controller.updateUserInfo)
+app.put('/editUserInfo/:id', controller.editUserInfo)
 app.delete('/deleteUser/:id', controller.deleteUser)
 
 app.listen(port, () => {
