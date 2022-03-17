@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 const AddUser = ({ setShowModal, newUser }) => {
-    const [firstName, setFirstName] = useState('test');
-    const [lastName, setLastName] = useState('test');
-    const [email, setEmail] = useState('test@test.com');
-    const [avatar, setAvatar] = useState('test');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [avatar, setAvatar] = useState('');
     
     const updateFirstName = (e) => setFirstName(e.target.value)
     const updateLastName = (e) => setLastName(e.target.value)
