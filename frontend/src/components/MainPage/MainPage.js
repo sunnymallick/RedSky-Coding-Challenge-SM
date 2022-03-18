@@ -75,8 +75,7 @@ const MainPage = () => {
                     closeOnClick
                     rtl={false}
                     pauseOnFocusLoss={false}
-                    draggable={false}
-                    pauseOnHover />
+                    draggable={false} />
             </div>
         </div>
     )
