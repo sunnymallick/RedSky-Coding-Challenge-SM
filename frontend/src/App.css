@@ -51,6 +51,7 @@ h2 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 24px;
+  line-height: 29px;
 }
 
 h3 {
@@ -58,12 +59,14 @@ h3 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
+  line-height: 20px;
 }
 
 p {
   font-family: 'Monserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
+  line-height: 20px;
 }
 
 button {
@@ -74,11 +77,23 @@ button {
   letter-spacing: 0.4px;
   background-color: #DD013F;
   color: #FFFFFF;
-  padding: 5px 5px 5px 5px;
+  height: 32px;
+  width: auto;
+  margin: 10px;
+  border: none;
 }
 
 button:hover {
   background-color: #FFFFFF;
   border-color: #DD013F;
   color: #DD013F;
+}
+
+.heading-container {
+  margin: 75px 75px 50px 75px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+#main-heading {
+  height: 30px;
 }

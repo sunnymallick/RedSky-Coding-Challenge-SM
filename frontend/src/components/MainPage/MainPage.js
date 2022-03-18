@@ -3,6 +3,7 @@ import axios from 'axios'
 import AddUserModal from '../AddUser'
 import EditUserModal from '../EditUser'
 import { toast, toastContainer } from 'react-toastify'
+import './MainPage.css'
 
 const MainPage = () => {
     const [users, setUsers] = useState([])
@@ -33,20 +34,38 @@ const MainPage = () => {
     };
     
     return (
-        <>
-            <AddUserModal newUser={newUser}/>
+        <div className='main-page-container'>
+            <div className='add-user-button-container'>
+                <AddUserModal newUser={newUser}/>
+            </div>
             <div className='user-list'>
+                <div className='user-list-heading'>
+                    <h2>USER LIST</h2>
+                </div>
+                <div className='user-list-info-title'>
+                    <h3>AVATAR</h3>
+                    <h3>FIRST NAME</h3>
+                    <h3>LAST NAME</h3>
+                    <h3>EMAIL ADDRESS</h3>
+                </div>
                 {users.map((user) => {
                     return (
                         <div className='user-list-container' key={user.id}>
-                            <h2>{user.first_name} {user.last_name}</h2>
-                            <EditUserModal editUser={editUser} userId={user.id} users={users} />
-                            <button onClick={() => deleteUser(user.id)}>DELETE</button>
+                            <div className='user-items'>
+                                <img src={user.avatar} alt='avatar' />
+                                <p>{user.first_name}</p>    
+                                <p>{user.last_name}</p>
+                                <p>{user.email}</p>
+                            </div>
+                            <div className='user-buttons'>
+                                <EditUserModal editUser={editUser} userId={user.id} users={users} />
+                                <button onClick={() => deleteUser(user.id)}>DELETE</button>
+                            </div>
                         </div>
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 
 }
