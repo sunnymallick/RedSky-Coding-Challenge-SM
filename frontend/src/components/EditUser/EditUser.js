@@ -21,19 +21,24 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
 
     return (
         <div className='edit-user-container'>
-                <div className='edit-user-header'>
-                    <h3>EDIT USER</h3>
+                <div className='edit-user-title'>
+                    <h2 className='edit-title'>EDIT USER</h2>
                 </div>
-            <form onSubmit={handleSubmit} className='edit-user-form'>
-                <p>FIRST NAME</p>
-                <input
+            <div className='form-container'>
+                <form onSubmit={handleSubmit}>
+                    <div className='input-title-container'>
+                        <h3>FIRST NAME</h3>
+                    </div>
+                    <input
                     className='form-input'
                     type='text'
                     placeholder='First Name'
                     value={firstName}
                     onChange={updateFirstName}
                     required />
-                <p>LAST NAME</p>
+                <div className='input-title-container'>
+                    <h3>LAST NAME</h3>
+                </div>
                 <input
                     className='form-input'
                     type='text'
@@ -41,7 +46,9 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={lastName}
                     onChange={updateLastName}
                     required />
-                <p>EMAIL ADDRESS</p>
+                <div className='input-title-container'>
+                    <h3>EMAIL ADDRESS</h3>
+                </div>
                 <input 
                     className='form-input'
                     type='email'
@@ -49,7 +56,9 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={email}
                     onChange={updateEmail}
                     required />
-                <p>AVATAR IMAGE LINK</p>
+                <div className='input-title-container'>
+                    <h3>AVATAR IMAGE LINK</h3>
+                </div>
                 <input
                     className='form-input'
                     type='text'
@@ -57,10 +66,13 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                     value={avatar}
                     onChange={updateAvatar}
                     required />
-                <button onClick={() => {setShowModal(false)}} type='button'>CANCEL</button>
-                <button type='submit'>SAVE</button>
+                <div className='buttons-container'>
+                    <button onClick={() => {setShowModal(false)}} type='button' className='cancel-button'>CANCEL</button>
+                    <button type='submit' className='button'>SAVE</button>
+                </div>
             </form>
             </div>
+        </div>
     )
 }
 

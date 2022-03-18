@@ -1,7 +1,35 @@
-.edit-user-form {
+.edit-user-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    width: 600px;
+    height: 550px;
 }
+
+.edit-user-title {
+    background-color: #DD013F;
+    color: #FFFFFF;
+    width: 580px;
+    position: absolute;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+
+.form-container {
+    margin-top: 75px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 10px 0px;
+    align-items: center;
+    text-align: left;
+}
+
+.form-input {
+    width: 520px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #D3D3D3;
+}
+
+
 
