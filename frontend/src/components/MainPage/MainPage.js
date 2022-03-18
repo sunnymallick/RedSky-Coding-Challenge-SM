@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import AddUserModal from '../AddUser'
 import EditUserModal from '../EditUser'
-import { toast, toastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './MainPage.css'
 
 const MainPage = () => {
@@ -20,11 +21,13 @@ const MainPage = () => {
     const newUser = async (first_name, last_name, email, avatar) => {
         const res = await axios.post('/addUser', { first_name, last_name, email, avatar });
         setUsers(res.data)
+        toast('User has been added to the list!')
     };
 
     const editUser = async (id, first_name, last_name, email, avatar) => {
         const res = await axios.put(`/editUserInfo/${id}`, { id, first_name, last_name, email, avatar });
         setUsers(res.data)
+        toast('User has been updated!')
     }
     
     const deleteUser = async (id) => {
@@ -64,6 +67,16 @@ const MainPage = () => {
                         </div>
                     )
                 })}
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={4000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable={false}
+                    pauseOnHover />
             </div>
         </div>
     )

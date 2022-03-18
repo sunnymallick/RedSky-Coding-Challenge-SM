@@ -1,3 +1,4 @@
+import { ToastContainer, toast } from 'react-toastify';
 import MainPage from './components/MainPage';
 import './App.css';
 
