@@ -10,7 +10,7 @@ const getUsersFromApi = async () => {
     const response = await axios.get(`https://reqres.in/api/users`);
     usersList = [...usersList, ...response.data.data];
     for (let i = 0; i < usersList.length; i++) {
-        if (userId < usersList[i].id) userId = usersList[i].id
+        if (userId < usersList[i].id) userId = usersList[i].id;
     }
 };
 

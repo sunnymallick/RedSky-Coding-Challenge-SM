@@ -7,27 +7,27 @@ import 'react-toastify/dist/ReactToastify.css'
 import './MainPage.css'
 
 const MainPage = () => {
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([]);
 
     const getUsers = async () => {
         let userData = await axios.get('/users');
-        setUsers(userData.data.data)
+        setUsers(userData.data.data);
     };
 
     useEffect(() => {
-        getUsers()
+        getUsers();
     }, [])
 
     const newUser = async (first_name, last_name, email, avatar) => {
         const res = await axios.post('/addUser', { first_name, last_name, email, avatar });
-        setUsers(res.data)
-        toast('User has been added to the list!')
+        setUsers(res.data);
+        toast('User has been added to the list!');
     };
 
     const editUser = async (id, first_name, last_name, email, avatar) => {
         const res = await axios.put(`/editUserInfo/${id}`, { id, first_name, last_name, email, avatar });
-        setUsers(res.data)
-        toast('User has been updated!')
+        setUsers(res.data);
+        toast('User has been updated!');
     }
     
     const deleteUser = async (id) => {

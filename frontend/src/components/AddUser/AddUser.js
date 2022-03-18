@@ -7,16 +7,16 @@ const AddUser = ({ setShowModal, newUser }) => {
     const [email, setEmail] = useState('');
     const [avatar, setAvatar] = useState('');
     
-    const updateFirstName = (e) => setFirstName(e.target.value)
-    const updateLastName = (e) => setLastName(e.target.value)
-    const updateEmail = (e) => setEmail(e.target.value)
-    const updateAvatar = (e) => setAvatar(e.target.value)
+    const updateFirstName = (e) => setFirstName(e.target.value);
+    const updateLastName = (e) => setLastName(e.target.value);
+    const updateEmail = (e) => setEmail(e.target.value);
+    const updateAvatar = (e) => setAvatar(e.target.value);
 
     
     const handleSubmit = async (e) => {
         e.preventDefault();
         await newUser(firstName, lastName, email, avatar);
-        setShowModal(false)
+        setShowModal(false);
     }
 
     return (
@@ -70,6 +70,6 @@ const AddUser = ({ setShowModal, newUser }) => {
             </div>
         </div>
     )
-}
+};
 
 export default AddUser

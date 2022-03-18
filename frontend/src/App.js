@@ -8,9 +8,9 @@ function App() {
     <div className='heading-container'>
       <h1 id='main-heading'>RedSky Coding Challenge</h1>
     </div>
-      <div className="App">
-        <MainPage />
-      </div>
+    <div className="App">
+      <MainPage />
+    </div>
     </>
   );
 }

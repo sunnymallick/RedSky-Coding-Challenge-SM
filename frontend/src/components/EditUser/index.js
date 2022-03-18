@@ -18,4 +18,4 @@ function EditUserModal({ editUser, userId, users }) {
     )
 }
 
-export default EditUserModal
+export default EditUserModal;

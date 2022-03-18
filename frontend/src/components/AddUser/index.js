@@ -18,4 +18,4 @@ function AddUserModal({ newUser }) {
 	);
 }
 
-export default AddUserModal
+export default AddUserModal;

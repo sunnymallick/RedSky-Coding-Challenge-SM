@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import './EditUser.css'
 
 const EditUser = ({ editUser, setShowModal, users, userId }) => {
-    const individualUser = users.find(user => user.id === userId)
+    const individualUser = users.find(user => user.id === userId);
     const [firstName, setFirstName] = useState(individualUser.first_name);
     const [lastName, setLastName] = useState(individualUser.last_name);
     const [email, setEmail] = useState(individualUser.email);
     const [avatar, setAvatar] = useState(individualUser.avatar);
     
-    const updateFirstName = (e) => setFirstName(e.target.value)
-    const updateLastName = (e) => setLastName(e.target.value)
-    const updateEmail = (e) => setEmail(e.target.value)
-    const updateAvatar = (e) => setAvatar(e.target.value)
+    const updateFirstName = (e) => setFirstName(e.target.value);
+    const updateLastName = (e) => setLastName(e.target.value);
+    const updateEmail = (e) => setEmail(e.target.value);
+    const updateAvatar = (e) => setAvatar(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         await editUser(+userId, firstName, lastName, email, avatar);
-        setShowModal(false)
-    }
+        setShowModal(false);
+    };
 
     return (
         <div className='edit-user-container'>
@@ -76,4 +76,4 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
     )
 }
 
-export default EditUser
+export default EditUser;
