@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './AddUser.css'
 
 const AddUser = ({ setShowModal, newUser }) => {
     const [firstName, setFirstName] = useState('');
@@ -19,39 +20,54 @@ const AddUser = ({ setShowModal, newUser }) => {
     }
 
     return (
-        <div className='form-container'>
-            <form onSubmit={handleSubmit}>
-                <input
-                    className='form-input'
-                    type='text'
-                    placeholder='First Name'
-                    value={firstName}
-                    onChange={updateFirstName}
-                    required />
-                <input
-                    className='form-input'
-                    type='text'
-                    placeholder='Last Name'
-                    value={lastName}
-                    onChange={updateLastName}
-                    required />
-                <input 
-                    className='form-input'
-                    type='email'
-                    placeholder='Email Address'
-                    value={email}
-                    onChange={updateEmail}
-                    required />
-                <input
-                    className='form-input'
-                    type='text'
-                    placeholder='Avatar Link'
-                    value={avatar}
-                    onChange={updateAvatar}
-                    required />
-                <button onClick={() => {setShowModal(false)}} type='button'>CANCEL</button>
-                <button type='submit'>CREATE</button>
-            </form>
+        <div className='add-user-container'>
+            <div className='add-user-title'>
+				<h2 className='add-title'>Create New User</h2>
+			</div>
+            <div className='form-container'>
+                <form onSubmit={handleSubmit}>
+                    <div className='input-title-container'>
+                        <h3>FIRST NAME</h3>
+                    </div>
+                    <input
+                        className='form-input'
+                        type='text'
+                        value={firstName}
+                        onChange={updateFirstName}
+                        required />
+                    <div className='input-title-container'>
+                        <h3>LAST NAME</h3>
+                    </div>
+                    <input
+                        className='form-input'
+                        type='text'
+                        value={lastName}
+                        onChange={updateLastName}
+                        required />
+                    <div className='input-title-container'>
+                        <h3>EMAIL ADDRESS</h3>
+                    </div>
+                    <input 
+                        className='form-input'
+                        type='email'
+                        value={email}
+                        onChange={updateEmail}
+                        required />
+                    <div className='input-title-container'>
+                        <h3>AVATAR IMAGE LINK</h3>
+                    </div>
+                    <input
+                        className='form-input'
+                        type='text'
+                        value={avatar}
+                        onChange={updateAvatar}
+                        required />
+                    <div className='buttons-container'>
+                        <button onClick={() => {setShowModal(false)}} type='button' className='cancel-button'>CANCEL</button>
+                        <button type='submit' className='button'>CREATE</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

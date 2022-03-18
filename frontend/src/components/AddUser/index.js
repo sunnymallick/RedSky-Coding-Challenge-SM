@@ -8,12 +8,9 @@ function AddUserModal({ newUser }) {
 
     return (
 		<>
-			<button className='site-button' onClick={() => setShowModal(true)}>CREATE NEW USER</button>
+			<button className='large-button' onClick={() => setShowModal(true)}>CREATE NEW USER</button>
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>
-					<div className='add-user-container'>
-						<h3 className='add-title'>Create New User</h3>
-					</div>
 					<AddUser setShowModal={setShowModal} newUser={newUser} />
 				</Modal>
 			)}

@@ -69,7 +69,7 @@ p {
   line-height: 20px;
 }
 
-button {
+.button {
   font-family: 'Monserrat', sans-serif;
   text-transform: uppercase;
   font-size: 18px;
@@ -84,15 +84,63 @@ button {
   border: none;
 }
 
-button:hover {
-  background-color: #FFFFFF;
-  color: #DD013F;
-  border: 2px solid #DD013F
-}
-
 .heading-container {
   margin: 75px 75px 50px 75px;
   border-bottom: 1px solid #D3D3D3;
+}
+
+.large-button {
+  font-family: 'Monserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 17px;
+  background-color: #DD013F;
+  color: #FFFFFF;
+  margin-left: 15px;
+  margin-right: 10px;
+  border: 2px solid #DD013F
+}
+
+
+.cancel-button {
+  font-family: 'Monserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  background-color: #FFFFFF;
+  color: #DD013F;
+  height: 35px;
+  width: auto;
+  border: 2px solid #DD013F
+}
+
+.cancel-button:hover {
+  background-color: #DD013F;
+  color: #FFFFFF;
+  border: 2px solid #DD013F
+}
+
+.edit-delete-button {
+  font-family: 'Monserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  background-color: #DD013F;
+  color: #FFFFFF;
+  height: 35px;
+  width: auto;
+  margin-left: 15px;
+  margin-right: 10px;
+  border: none;
+}
+
+.button:hover, .large-button:hover, .edit-delete-button:hover {
+  background-color: #FFFFFF;
+  color: #DD013F;
+  border: 2px solid #DD013F
 }
 
 #main-heading {

@@ -8,14 +8,13 @@ function EditUserModal({ editUser, userId, users }) {
 
     return (
         <>
-            <button className='site-button' onClick={() => setShowModal(true)}>EDIT</button>
+            <button className='edit-delete-button' onClick={() => setShowModal(true)}>EDIT</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditUser setShowModal={setShowModal} editUser={editUser} userId={userId} users={users} />
                 </Modal>
             )}
         </>
-
     )
 }
 

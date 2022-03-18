@@ -20,8 +20,7 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
     }
 
     return (
-        <>
-            <div className='edit-user-container'>
+        <div className='edit-user-container'>
                 <div className='edit-user-header'>
                     <h3>EDIT USER</h3>
                 </div>
@@ -62,7 +61,6 @@ const EditUser = ({ editUser, setShowModal, users, userId }) => {
                 <button type='submit'>SAVE</button>
             </form>
             </div>
-        </>
     )
 }
 

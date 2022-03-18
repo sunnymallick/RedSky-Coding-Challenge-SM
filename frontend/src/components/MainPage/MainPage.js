@@ -59,7 +59,7 @@ const MainPage = () => {
                             </div>
                             <div className='user-buttons'>
                                 <EditUserModal editUser={editUser} userId={user.id} users={users} />
-                                <button onClick={() => deleteUser(user.id)}>DELETE</button>
+                                <button className='edit-delete-button' onClick={() => deleteUser(user.id)}>DELETE</button>
                             </div>
                         </div>
                     )

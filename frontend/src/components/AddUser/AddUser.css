@@ -1,0 +1,45 @@
+.add-user-container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+}
+
+.add-user-title {
+    background-color: #DD013F;
+    color: #FFFFFF;
+    position: absolute;
+    width: 580px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+
+.form-container {
+    margin-top: 75px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 10px 0px;
+    align-items: center;
+    text-align: left;
+}
+
+.form-input {
+    width: 520px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-left: 200px;
+    margin-left: auto;
+}
+
+.input-title-container {
+    padding-left: 5px;
+    margin-bottom: -20px;
+}
