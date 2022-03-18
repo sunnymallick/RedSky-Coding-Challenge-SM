@@ -44,18 +44,18 @@ const MainPage = () => {
                 </div>
                 <div className='user-list-info-title'>
                     <h3>AVATAR</h3>
-                    <h3>FIRST NAME</h3>
-                    <h3>LAST NAME</h3>
-                    <h3>EMAIL ADDRESS</h3>
+                    <h3 id='first-name-header'>FIRST NAME</h3>
+                    <h3 id='last-name-header'>LAST NAME</h3>
+                    <h3 id='email-header'>EMAIL ADDRESS</h3>
                 </div>
                 {users.map((user) => {
                     return (
                         <div className='user-list-container' key={user.id}>
                             <div className='user-items'>
                                 <img src={user.avatar} alt='avatar' />
-                                <p>{user.first_name}</p>    
-                                <p>{user.last_name}</p>
-                                <p>{user.email}</p>
+                                <p className='list-item'>{user.first_name}</p>    
+                                <p className='list-item'>{user.last_name}</p>
+                                <p className='list-item'>{user.email}</p>
                             </div>
                             <div className='user-buttons'>
                                 <EditUserModal editUser={editUser} userId={user.id} users={users} />
@@ -67,7 +67,6 @@ const MainPage = () => {
             </div>
         </div>
     )
-
 }
 
 export default MainPage

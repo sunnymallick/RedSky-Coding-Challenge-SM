@@ -77,16 +77,17 @@ button {
   letter-spacing: 0.4px;
   background-color: #DD013F;
   color: #FFFFFF;
-  height: 32px;
+  height: 35px;
   width: auto;
-  margin: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
   border: none;
 }
 
 button:hover {
   background-color: #FFFFFF;
-  border-color: #DD013F;
   color: #DD013F;
+  border: 2px solid #DD013F
 }
 
 .heading-container {
